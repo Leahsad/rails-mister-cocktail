@@ -1,0 +1,9 @@
+<p>
+  <strong>Name:</strong>
+  <%= @cocktail.name %>
+</p>
+
+<%= link_to 'Doses', new_cocktail_dose_path(@cocktail)%>
+<%= link_to 'Edit', edit_cocktail_path%>
+<%= link_to 'Back', cocktail_path%>
+
