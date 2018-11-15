@@ -1,18 +1,28 @@
-<h1>Cocktails</h1>
+<div class = "background">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Cocktails Menue</h1>
+      <p>Create your own cocktails</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
       <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to "Show", cocktail_path(cocktail)%> </td>
-      </tr>
+        <div class="col-xs-12 col-sm-3">
+          <%= link_to cocktail_path(cocktail) do%>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://preview.ibb.co/hST64f/alcoholic-beverage-beverage-citrus-1232152-1.jpg');">
+            <div class="card-category"><%= cocktail.name %></div>
+            <div class="card-description">
+              <p>Very cool city, the best</p>
+            </div>
+          </div>
+          <% end %>
+        </div>
       <% end %>
-  </tbody>
-</table>
-<%= link_to "Add a new cocktail", new_cocktail_path%>
+    </div>
+  </div>
+</div>
+<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-danger" %>
+
